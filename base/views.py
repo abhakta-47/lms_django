@@ -25,7 +25,7 @@ def contents(request,stuclass,sub):
     for chapter in searched_chapters:
         chapter_={
             'chapter':chapter,
-            'materails':chapter.material_set.all(),
+            'materials':chapter.material_set.all(),
         }
         # print(chapter_)
         chapters.append(chapter_)

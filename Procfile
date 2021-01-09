@@ -1,0 +1,1 @@
+web: gunicorn geo_class.wsgi
