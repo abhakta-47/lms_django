@@ -14,6 +14,7 @@ from pathlib import Path
 
 
 import django_on_heroku
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -81,9 +82,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'CONN_MAX_AGE': 500 
     }
 }
 
+DATABASES['default'] ={
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'd19edlgh2dji1p',
+    'USER': 'dphqvnrndvzzbb',
+    'PASSWORD': '4e6b250533d8c09843bffe509afb7248d8ff271d98d0716000433f7a16c1f013',
+    'HOST': 'ec2-34-200-158-205.compute-1.amazonaws.com',
+    'PORT': '5432',
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -123,3 +133,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 django_on_heroku.settings(locals())
+# print(locals())
