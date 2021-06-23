@@ -28,7 +28,7 @@ SECRET_KEY = '1596!+6qc2(f-(+6z1le@3t19j-sy2%mtksow(esc1$3(9l=^m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,18 +82,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        'CONN_MAX_AGE': 500 
+        'CONN_MAX_AGE': 500
     }
 }
 
-DATABASES['default'] ={
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'd19edlgh2dji1p',
-    'USER': 'dphqvnrndvzzbb',
-    'PASSWORD': '4e6b250533d8c09843bffe509afb7248d8ff271d98d0716000433f7a16c1f013',
-    'HOST': 'ec2-34-200-158-205.compute-1.amazonaws.com',
-    'PORT': '5432',
-}
+# DATABASES['default'] ={
+#     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#     'NAME': 'd19edlgh2dji1p',
+#     'USER': 'dphqvnrndvzzbb',
+#     'PASSWORD': '4e6b250533d8c09843bffe509afb7248d8ff271d98d0716000433f7a16c1f013',
+#     'HOST': 'ec2-34-200-158-205.compute-1.amazonaws.com',
+#     'PORT': '5432',
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -132,5 +132,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-django_on_heroku.settings(locals())
+# django_on_heroku.settings(locals())
 # print(locals())
